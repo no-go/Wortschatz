@@ -7,12 +7,12 @@
     android:paddingLeft="0dp"
     android:paddingRight="0dp"
     android:paddingTop="0dp"
-    tools:context="de.quantenwatch.wortschatz.MainActivity">
+    tools:context="de.digisocken.openwort.MainActivity">
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/feedList"
+        android:id="@+id/dicList"
         android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"

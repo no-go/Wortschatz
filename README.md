@@ -1,6 +1,6 @@
-# Wortschatz App (Android)
+# OpenWort App (Android)
 
-Wortschatz is a VERY simple german Thesaurus app.
+OpenWort is a VERY simple german Thesaurus app.
 
 Features:
 
@@ -8,6 +8,7 @@ Features:
  -  very simple
  -  german
  -  search and highlight results
+ -  click to copy entry to clipboard
 
 ## Get the App
 
@@ -47,8 +48,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 For more information, please refer to http://unlicense.org
 
-Some third party code parts (Twitterkit, AppIntro) uses other OpenSource licenses - look at their code to get further informations.
-
 ### License - OpenThesaurus File
 
 My Code uses a text file from [openthesaurus.de](https://www.openthesaurus.de)
@@ -72,3 +71,13 @@ with this license:
     You should have received a copy of the GNU Lesser General Public
     License along with this library; if not, write to the Free Software
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+## Screenshots
+
+![Thesaurus](img/thesaurus.jpg)
+
+![Result 1](img/result.jpg)
+
+![Result 2](img/result2.jpg)
+
+![Clipboard](img/clipboard.jpg)

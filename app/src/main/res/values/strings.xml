@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Wortschatz</string>
+    <string name="app_name">OpenWort</string>
     <string name="ignoreline">#</string>
     <string name="rowsplit">\n</string>
     <string name="columnsplit">;</string>
@@ -10,6 +10,13 @@
     <string name="insertSearch">Suche betreten</string>
     <string name="leaveSearch">Suche verlassen</string>
     <string name="search">Suche</string>
+    <string name="projPage">Info Webseite</string>
+    <string name="flattr_this">Mikro Spende !</string>
     <string name="info">Datenquelle</string>
-    <string name="empty">abwarten oder nichts gefunden</string>
+    <string name="empty">noch nichts gefunden ...</string>
+    <string name="buzz">derb;vulg.</string>
+    <string name="copying">Kopiert !</string>
+    <string name="titleTroll">Do not Troll!</string>
+    <string name="bodyTroll">Du kopierst soeben derbe und vulgäre Worte. Überdenke deine Tat und sende diese Worte nicht unüberlegt Freunden, Fremden oder Menschen aus deiner Arbeitswelt.</string>
+    <string name="okay">n\'okay</string>
 </resources>

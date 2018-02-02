@@ -9,6 +9,14 @@
         android:icon="@android:drawable/ic_menu_search"
         app:showAsAction="always|collapseActionView" />
 
+    <item
+        android:id="@+id/action_project"
+        android:title="@string/projPage"></item>
+
+    <item
+        android:id="@+id/action_flattr"
+        android:title="@string/flattr_this"></item>
+
     <item android:id="@+id/action_web"
         android:title="@string/info"
         android:icon="@android:drawable/ic_menu_info_details"
