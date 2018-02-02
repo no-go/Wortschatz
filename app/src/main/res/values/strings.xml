@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Wortschatz</string>
+    <string name="ignoreline">#</string>
+    <string name="rowsplit">\n</string>
+    <string name="columnsplit">;</string>
+    <string name="columnsplitReplace">\ ·\ </string>
+    <string name="sortReplaceFrom">Ä;Ö;Ü;ä;ö;ü;ß</string>
+    <string name="sortReplaceTo">Ae;Oe;Ue;ae;oe;ue;ss</string>
+    <string name="searching">Suche nach \'%1$s\'</string>
+    <string name="insertSearch">Suche betreten</string>
+    <string name="leaveSearch">Suche verlassen</string>
+    <string name="search">Suche</string>
+    <string name="info">Datenquelle</string>
+    <string name="empty">abwarten oder nichts gefunden</string>
+</resources>

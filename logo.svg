@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 237.22029 237.22029"
+   height="66.948837mm"
+   width="66.948837mm">
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-108.08261,-68.389275)"
+     id="layer1">
+    <rect
+       ry="23.862396"
+       y="68.389275"
+       x="108.08261"
+       height="237.22029"
+       width="237.22029"
+       id="rect49"
+       style="opacity:1;fill:#008000;fill-opacity:1;stroke:none;stroke-width:2.35629916;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       y="222.09117"
+       x="235.81659"
+       height="19.651398"
+       width="109.48631"
+       id="rect49-3"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.46073923;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       y="241.04073"
+       x="235.81659"
+       height="19.651398"
+       width="109.48631"
+       id="rect49-3-6"
+       style="opacity:1;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.46073925;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <rect
+       y="259.28842"
+       x="235.81659"
+       height="19.651398"
+       width="109.48631"
+       id="rect49-3-6-7"
+       style="opacity:1;fill:#ffff00;fill-opacity:1;stroke:none;stroke-width:0.46073928;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       id="text3787"
+       transform="scale(0.9375)"
+       d="m 118.7168,148.5957 40.96679,174.39258 h 51.24024 l 30.92773,-132.57617 31.27539,132.57617 h 51.23828 L 364.98828,148.5957 H 322.75 L 292.97656,275.33203 263.43164,148.5957 H 220.61719 L 191.07422,275.33203 161.30078,148.5957 Z"
+       style="font-style:normal;font-weight:normal;font-size:222.91879272px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:5.9445014" />
+  </g>
+</svg>
