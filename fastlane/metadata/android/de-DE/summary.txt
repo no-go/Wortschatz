@@ -1,0 +1,1 @@
+OpenWort ist ein einfach bedienbarer offline-Thesaurus (Nachschlagewerk) der deutschen Sprache.

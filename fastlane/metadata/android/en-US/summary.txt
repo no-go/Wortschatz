@@ -1,0 +1,1 @@
+OpenWort is a simple german offline dictionary.
