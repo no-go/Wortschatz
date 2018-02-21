@@ -9,6 +9,12 @@
         android:icon="@android:drawable/ic_menu_search"
         app:showAsAction="always|collapseActionView" />
 
+    <group android:checkableBehavior="all">
+        <item
+            android:id="@+id/action_copypaste"
+            android:title="@string/copypaste" />
+    </group>
+
     <item
         android:id="@+id/action_project"
         android:title="@string/projPage"></item>

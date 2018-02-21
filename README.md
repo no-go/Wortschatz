@@ -8,7 +8,8 @@ Features:
  -  very simple
  -  german
  -  search and highlight results
- -  click to copy entry to clipboard
+ -  click to copy entry to clipboard OR
+ -  ... use a Copy-Paste editor window
 
 ## Get the App
 
@@ -81,3 +82,7 @@ with this license:
 ![Result 2](img/result2.jpg)
 
 ![Clipboard](img/clipboard.jpg)
+
+![copy paste option](img/copypaste.jpg)
+
+![copy paste window](img/copypastewin.jpg)

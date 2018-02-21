@@ -17,6 +17,7 @@
     <string name="buzz">derb;vulg.</string>
     <string name="copying">Kopiert !</string>
     <string name="titleTroll">Do not Troll!</string>
+    <string name="copypaste">Copy/Paste Editor</string>
     <string name="bodyTroll">Du kopierst soeben derbe und vulgäre Worte. Überdenke deine Tat und sende diese Worte nicht unüberlegt Freunden, Fremden oder Menschen aus deiner Arbeitswelt.</string>
     <string name="okay">n\'okay</string>
 </resources>

@@ -5,8 +5,10 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -36,12 +38,26 @@ public class MainActivity extends AppCompatActivity {
     private EntryAdapter entryAdapter;
     private EntryAdapter resultEntryAdapter;
     private ListView entryList;
+    private boolean copyPasteWindow;
 
     private ClipboardManager clipboard;
+    public static SharedPreferences mPreferences;
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.action_copypaste:
+                if (item.isChecked()) {
+                    copyPasteWindow = false;
+                    mPreferences.edit().putBoolean("copypaste", false).apply();
+                    item.setChecked(false);
+                } else {
+                    copyPasteWindow = true;
+                    mPreferences.edit().putBoolean("copypaste", true).apply();
+                    item.setChecked(true);
+                }
+                break;
             case R.id.action_web:
                 Intent intentProj2 = new Intent(Intent.ACTION_VIEW, Uri.parse(PROJECT2_LINK));
                 startActivity(intentProj2);
@@ -58,6 +74,14 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return true;
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        MenuItem mi2 = menu.findItem(R.id.action_copypaste);
+        copyPasteWindow = mPreferences.getBoolean("copypaste", true);
+        mi2.setChecked(copyPasteWindow);
+        return super.onPrepareOptionsMenu(menu);
     }
 
     @Override
@@ -119,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+        mPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         setContentView(R.layout.activity_main);
         clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
@@ -149,13 +174,19 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                ClipData clip = ClipData.newPlainText(
-                        getString(R.string.app_name),
-                        msg
-                );
+                if (copyPasteWindow) {
+                    Intent myIntent = new Intent(MainActivity.this, EditActivity.class);
+                    myIntent.putExtra("msg", msg);
+                    startActivity(myIntent);
+                } else {
+                    ClipData clip = ClipData.newPlainText(
+                            getString(R.string.app_name),
+                            msg
+                    );
 
-                makeToast(getString(R.string.copying));
-                clipboard.setPrimaryClip(clip);
+                    makeToast(getString(R.string.copying));
+                    clipboard.setPrimaryClip(clip);
+                }
             }
         });
 
