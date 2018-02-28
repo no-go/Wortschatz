@@ -86,3 +86,82 @@ with this license:
 ![copy paste option](img/copypaste.jpg)
 
 ![copy paste window](img/copypastewin.jpg)
+
+## Hint to add App to f-droid.org
+
+you need a gitlab.com account (or use a github.com account).
+
+ -  you need android sdk (you need some export or path hints?)
+ -  export ANDROID_HOME=/home/LOCALUSER/Android/Sdk/
+ -  do a git clone fdroidserver and touch config (?)
+ -  export PATH="$PATH:$PWD/fdroidserver"
+ -  FORK via webgui gitlab fdroid fdroiddata
+ -  git clone git@gitlab.com:YOURUSERNAME/fdroiddata.git
+ -  cd fdroiddata
+ -  fdroid init
+ -  fdroid readmeta
+ -  fdroid import --url https://github.com/no-go/Wortschatz.git --subdir app
+ -  modify metadata file:
+
+    Categories:Reading
+    License:Unlicense
+    Author Name:deadlockz
+    Web Site:https://github.com/no-go/Wortschatz/blob/HEAD/README.md
+    Source Code:https://github.com/no-go/Wortschatz
+    Issue Tracker:
+    
+    Auto Name:OpenWort
+    Summary:Einfacher offline Thesaurus (Nachschlagewerk) der deutschen Sprache
+    Description:
+    OpenWort ist ein kleiner, einfach bedienbarer Thesaurus der deutschen Sprache
+    mit vielen Redewendungen und Synonymen. Als Datenquelle dient eine Text-Datei
+    von [http://www.openthesaurus.de/ OpenThesaurus] (LGPL Lizenz), die in
+    die App fest eingebaut ist. Eine Internetverbindung ist daher zur
+    Benutzung nicht notwendig.
+    
+    '''Funktionen'''
+    
+    * arbeitet offline (maximaler Datenschutz)
+    * kein Dateizugriff (maximaler Datenschutz)
+    * der Quellcode der App ist auch für Anfänger verständlich
+    * In Suchergebnissen werden Funde hervorgehoben
+    * ein Tippen auf einen Eintrag kopiert ihn komplett in die Zwischenablage
+    
+    Du kannst mit OpenWort die deutsche Sprache lernen oder knifflige Worte
+    nachschlagen, die du sonst immer falsch geschrieben hast.
+    .
+    
+    Repo Type:git
+    Repo:https://github.com/no-go/Wortschatz
+    
+    Build:1.5,15
+        commit=ebb88a1
+        subdir=app
+        gradle=yes
+        target=android-26
+    
+    Auto Update Mode:Version v%v
+    Update Check Mode:Tags
+    Current Version:1.5
+    Current Version Code:15
+
+for the app code:
+
+use git tag v1.5 -m "huibui" to notify changes to fdroid, but there
+is app/build.gradle file with relevant version codes!
+
+ -  fdroid readmeta
+ -  fdroid rewritemeta de.digisocken.openwort
+ -  fdroid checkupdates de.digisocken.openwort
+ -  fdroid lint de.digisocken.openwort
+     -  some hints? do the changes, readmeta, rewitemeta(?), and again:
+ -  fdroid lint de.digisocken.openwort
+ -  fdroid build -v -l de.digisocken.openwort
+ -  git add *
+ -  git status (should be only one file!!)
+ -  git commit -m "OpenWort metadata added"
+ -  git push
+ -  MERGE via webgui request to fdroid/fdroiddata
+ -  add hints about lint, fdroid ... the above stuff, and that all of it works well
+ -  wait to be merged
+ -  delete via webgui your fork
