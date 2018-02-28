@@ -4,7 +4,7 @@ von [http://www.openthesaurus.de/ OpenThesaurus] (LGPL Lizenz), die in
 die App fest eingebaut ist. Eine Internetverbindung ist daher zur
 Benutzung nicht notwendig.
 
-Funktionen:
+'''Funktionen'''
 
 * arbeitet offline (maximaler Datenschutz)
 * kein Dateizugriff (maximaler Datenschutz)

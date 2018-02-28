@@ -4,4 +4,7 @@
     <color name="colorPrimary">#006300</color>
     <color name="colorPrimaryHeadline">#209020</color>
     <color name="colorAccent">#EE8800</color>
+    <color name="flagA">#000000</color>
+    <color name="flagB">#FF0000</color>
+    <color name="flagC">#FFFF00</color>
 </resources>

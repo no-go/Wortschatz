@@ -13,11 +13,12 @@
     <string name="projPage">Info Webseite</string>
     <string name="flattr_this">Mikro Spende !</string>
     <string name="info">Datenquelle</string>
-    <string name="empty">noch nichts gefunden ...</string>
+    <string name="empty">(noch) nichts gefunden ...</string>
     <string name="buzz">derb;vulg.</string>
     <string name="copying">Kopiert !</string>
     <string name="titleTroll">Do not Troll!</string>
     <string name="copypaste">Copy/Paste Editor</string>
     <string name="bodyTroll">Du kopierst soeben derbe und vulgäre Worte. Überdenke deine Tat und sende diese Worte nicht unüberlegt Freunden, Fremden oder Menschen aus deiner Arbeitswelt.</string>
-    <string name="okay">n\'okay</string>
+    <string name="okay">ok</string>
+    <string name="intro">lernen, nachschlagen, richtig schreiben</string>
 </resources>

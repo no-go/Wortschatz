@@ -143,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
         mPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         setContentView(R.layout.activity_main);
@@ -192,6 +193,9 @@ public class MainActivity extends AppCompatActivity {
 
         resultEntryAdapter = new EntryAdapter(this);
         new RetrieveFeedTask().execute();
+
+        Intent intent = new Intent(MainActivity.this, LogoActivity.class);
+        startActivity(intent);
     }
 
     class RetrieveFeedTask extends AsyncTask<String, Void, Void> {
