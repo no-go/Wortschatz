@@ -101,7 +101,8 @@ you need a gitlab.com account (or use a github.com account).
  -  fdroid init
  -  fdroid readmeta
  -  fdroid import --url https://github.com/no-go/Wortschatz.git --subdir app
- -  modify metadata file:
+
+modify metadata file:
 
     Categories:Reading
     License:Unlicense
