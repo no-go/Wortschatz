@@ -1,13 +1,16 @@
 OpenWort ist ein kleiner, einfach bedienbarer Thesaurus der deutschen Sprache
 mit vielen Redewendungen und Synonymen. Als Datenquelle dient eine Text-Datei
-von [http://www.openthesaurus.de/ OpenThesaurus] (LGPL Lizenz), die in
+von <a href="http://www.openthesaurus.de/">OpenThesaurus</a> (LGPL Lizenz), die in
 die App fest eingebaut ist. Eine Internetverbindung ist daher zur
 Benutzung nicht notwendig.
 
-'''Funktionen'''
+<b>Funktionen</b>
 
-* arbeitet offline (maximaler Datenschutz)
-* kein Dateizugriff (maximaler Datenschutz)
-* der Quellcode der App ist auch für Anfänger verständlich
-* In Suchergebnissen werden Funde hervorgehoben
-* ein Tippen auf einen Eintrag kopiert ihn komplett in die Zwischenablage
+👉 arbeitet offline (maximaler Datenschutz)
+👉 kein Dateizugriff (maximaler Datenschutz)
+👉 der Quellcode der App ist auch für Anfänger verständlich
+👉 In Suchergebnissen werden Funde hervorgehoben
+👉 ein Tippen auf einen Eintrag kopiert ihn komplett in die Zwischenablage
+
+Du kannst mit OpenWort die deutsche Sprache lernen oder knifflige Worte
+nachschlagen, die du sonst immer falsch geschrieben hast.

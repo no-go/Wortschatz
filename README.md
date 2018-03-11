@@ -15,6 +15,11 @@ Features:
 
 You can get a signed APK from here (Android 4.1+): [APK](https://raw.githubusercontent.com/no-go/Wortschatz/master/app/release/app-release.apk)
 
+<a href="https://f-droid.org/repository/browse/?fdid=de.digisocken.openwort" target="_blank">
+<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="90"/></a>
+<a href="https://play.google.com/store/apps/details?id=de.digisocken.openwort" target="_blank">
+<img src="https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png" alt="Get it on Google Play" height="90"/></a>
+
 ## Privacy Policy
 
 ### Personal information.
@@ -87,7 +92,7 @@ with this license:
 
 ![copy paste window](img/copypastewin.jpg)
 
-## Hint to add App to f-droid.org
+## Hints to add a App to f-droid.org
 
 you need a gitlab.com account (or use a github.com account).
 
@@ -102,7 +107,7 @@ you need a gitlab.com account (or use a github.com account).
  -  fdroid readmeta
  -  fdroid import --url https://github.com/no-go/Wortschatz.git --subdir app
 
-modify metadata file:
+modify metadata/de.digisocken.openwort.txt file:
 
     Categories:Reading
     License:Unlicense
@@ -159,10 +164,49 @@ is app/build.gradle file with relevant version codes!
  -  fdroid lint de.digisocken.openwort
  -  fdroid build -v -l de.digisocken.openwort
  -  git add *
- -  git status (should be only one file!!)
+ -  git status
+     -  should be only one file!!
  -  git commit -m "OpenWort metadata added"
  -  git push
  -  MERGE via webgui request to fdroid/fdroiddata
  -  add hints about lint, fdroid ... the above stuff, and that all of it works well
  -  wait to be merged
+
+### during merge request: you did something wrong?
+
+ -  change it on your pc
+ -  git add metadata/de.digisocken.openwort.txt
+ -  git commit -m "bug is fixed"
+ -  git push
+
+### push not work? fare behind?
+
+ -  it does not work, because your fork is fare behind? rebase your fork:
+ -  git remote add upstream https://gitlab.com/fdroid/fdroiddata.git
+ -  git fetch upstream
+ -  maybe (git checkout master) ?
+ -  compare my local repository with "upstream/master" and add my commits as local changes:
+     -  git rebase upstream/master
+ -  git pull (dangerous: this makes a merge with all your changes, if you push)
+     -  comment it not as merge or remerge -> it is a rebase!
+     -  git push
+     -  alternative to pull, merge, push (?): git -f pull
+ -  wait to be merged
  -  delete via webgui your fork
+
+### metadata folder
+
+ -  f-droid website uses content from de.digisocken.openwort.txt file
+ -  f-droid website uses icon from your repository metadata folder
+ -  f-droid updates data from your repository metadata folder only, if the App code/revison updates
+ -  f-droid client: the text from your repository metadata folder must be html-like.
+
+A good metadata text example: [https://github.com/Diaspora-for-Android/dandelion/blob/6cac47763c00d3f9e11969e721ebb372ebe4084f/metadata/en-US/full_description.txt Dandelion App]
+
+### fdroid and git todo
+
+ -  history changing
+ -  pick, edit, stash commits
+ -  `git rebase -i HEAD~3` (last 3 commits from HEAD)
+ -  `git add -p .`
+ -  other stuff
