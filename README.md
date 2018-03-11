@@ -80,11 +80,9 @@ with this license:
 
 ## Screenshots
 
-![Thesaurus](img/thesaurus.jpg)
+![Thesaurus](metadata/de-DE/images/phoneScreenshots/0.png)
 
-![Result 1](img/result.jpg)
-
-![Result 2](img/result2.jpg)
+![Result](metadata/de-DE/images/phoneScreenshots/2.png)
 
 ![Clipboard](img/clipboard.jpg)
 
@@ -201,7 +199,7 @@ is app/build.gradle file with relevant version codes!
  -  f-droid updates data from your repository metadata folder only, if the App code/revison updates
  -  f-droid client: the text from your repository metadata folder must be html-like.
 
-A good metadata text example: [https://github.com/Diaspora-for-Android/dandelion/blob/6cac47763c00d3f9e11969e721ebb372ebe4084f/metadata/en-US/full_description.txt Dandelion App]
+A good metadata text example: [Dandelion App](https://github.com/Diaspora-for-Android/dandelion/blob/6cac47763c00d3f9e11969e721ebb372ebe4084f/metadata/en-US/full_description.txt)
 
 ### fdroid and git todo
 

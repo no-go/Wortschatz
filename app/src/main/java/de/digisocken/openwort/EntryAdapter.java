@@ -73,6 +73,17 @@ public class EntryAdapter extends BaseAdapter {
             tt.setText(dicEntries.get(i).title);
             tb.setText(dicEntries.get(i).body);
         }
+        if (i%2==0) {
+            view.setBackgroundColor(ContextCompat.getColor(
+                    activity.getApplicationContext(),
+                    R.color.evenCol
+            ));
+        } else {
+            view.setBackgroundColor(ContextCompat.getColor(
+                    activity.getApplicationContext(),
+                    R.color.oddCol
+            ));
+        }
         return view;
     }
 

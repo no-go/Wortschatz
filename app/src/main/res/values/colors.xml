@@ -7,4 +7,7 @@
     <color name="flagA">#000000</color>
     <color name="flagB">#FF0000</color>
     <color name="flagC">#FFFF00</color>
+
+    <color name="evenCol">#FFFFFF</color>
+    <color name="oddCol">#FFFFE0</color>
 </resources>

@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.preference.PreferenceManager;
 import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -141,6 +142,19 @@ public class MainActivity extends AppCompatActivity {
             FLATTR_LINK = "https://flattr.com/submit/auto?fid="+FLATTR_ID+"&url="+
                     java.net.URLEncoder.encode(PROJECT_LINK, "ISO-8859-1");
         } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            ActionBar ab = getSupportActionBar();
+            if (ab != null) {
+                ab.setDisplayShowHomeEnabled(true);
+                ab.setHomeButtonEnabled(true);
+                ab.setDisplayUseLogoEnabled(true);
+                ab.setLogo(R.drawable.ic_logo);
+                ab.setTitle("  " + getString(R.string.app_name));
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
