@@ -142,7 +142,6 @@ modify metadata/de.digisocken.openwort.txt file:
         commit=ebb88a1
         subdir=app
         gradle=yes
-        target=android-26
     
     Auto Update Mode:Version v%v
     Update Check Mode:Tags
