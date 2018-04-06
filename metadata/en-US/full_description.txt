@@ -1,5 +1,4 @@
-OpenWort is a very simple german thesaurus with many idioms and
-synonyms from <a href="http://www.openthesaurus.de/">OpenThesaurus</a> (LGPL licence).
+OpenWort is a very simple german thesaurus with many idioms and synonyms from <a href="http://www.openthesaurus.de/">OpenThesaurus</a> (LGPL licence).
 
 Features:
 
