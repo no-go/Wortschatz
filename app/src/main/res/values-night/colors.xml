@@ -5,7 +5,7 @@
     <color name="colorPrimaryHeadline">#209020</color>
     <color name="colorAccent">#EE8800</color>
 
-    <color name="evenCol">#FFFFFF</color>
-    <color name="oddCol">#FFFFE0</color>
-    <color name="text">#000000</color>
+    <color name="evenCol">#101010</color>
+    <color name="oddCol">#202020</color>
+    <color name="text">#f0f0f0</color>
 </resources>

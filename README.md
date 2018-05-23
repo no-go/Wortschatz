@@ -7,6 +7,7 @@ Features:
  -  works offline
  -  very simple
  -  german
+ -  nightmode
  -  search and highlight results
  -  click to copy entry to clipboard OR
  -  ... use a Copy-Paste editor window

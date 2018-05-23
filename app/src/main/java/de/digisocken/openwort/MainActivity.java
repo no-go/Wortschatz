@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
@@ -21,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
@@ -29,6 +31,7 @@ import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     public static final String PROJECT_LINK = "https://github.com/no-go/Wortschatz";
@@ -43,8 +46,34 @@ public class MainActivity extends AppCompatActivity {
 
     private ClipboardManager clipboard;
     public static SharedPreferences mPreferences;
+    private TextView emptyView;
 
+    public static int data_total = 1;
+    public static int data_line = 0;
 
+    private Handler handler = new Handler();
+
+    private final Runnable updateHintThread = new Runnable() {
+        public void run() {
+            try {
+                ActionBar ab = getSupportActionBar();
+                if (ab != null && data_line > 0) {
+                    ab.setTitle(String.format(Locale.GERMAN,
+                            "  %s %.0f%%",
+                            getString(R.string.app_name),
+                            (100*(float)data_line/data_total)
+                    ));
+                    emptyView.setText("");
+                    handler.postDelayed(this, 500);
+                } else {
+                    ab.setTitle("  " + getString(R.string.app_name));
+                    emptyView.setText(R.string.empty);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    };
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -100,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 makeToast(getString(R.string.searching, query));
+                data_line = 0;
                 resultEntryAdapter.filter(query, entryAdapter);
                 entryList.setAdapter(resultEntryAdapter);
                 resultEntryAdapter.notifyDataSetChanged();
@@ -164,7 +194,8 @@ public class MainActivity extends AppCompatActivity {
         clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
         entryAdapter = new EntryAdapter(this);
         entryList = (ListView) findViewById(R.id.dicList);
-        entryList.setEmptyView(findViewById(android.R.id.empty));
+        emptyView = (TextView) findViewById(android.R.id.empty);
+        entryList.setEmptyView(emptyView);
         entryList.setAdapter(entryAdapter);
         entryList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -191,6 +222,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (copyPasteWindow) {
                     Intent myIntent = new Intent(MainActivity.this, EditActivity.class);
+                    //myIntent.setFlags(Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
                     myIntent.putExtra("msg", msg);
                     startActivity(myIntent);
                 } else {
@@ -204,12 +236,9 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        handler.postDelayed(updateHintThread, 500);
         resultEntryAdapter = new EntryAdapter(this);
         new RetrieveFeedTask().execute();
-
-        Intent intent = new Intent(MainActivity.this, LogoActivity.class);
-        startActivity(intent);
     }
 
     class RetrieveFeedTask extends AsyncTask<String, Void, Void> {
@@ -217,6 +246,8 @@ public class MainActivity extends AppCompatActivity {
             try {
                 InputStream ins = getResources().openRawResource(R.raw.openthesaurus);
                 String[] str = readTextFile(ins).split(getString(R.string.rowsplit));
+                data_total = str.length;
+                data_line = 0;
                 for (int i=0; i<str.length; i++) {
                     DicEntry dicEntry = new DicEntry();
                     if (str[i].trim().length() == 0) continue;
@@ -226,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
                     str[i] = str[i].replace(line[0]+getString(R.string.columnsplit) , "");
                     dicEntry.body = str[i].replace(getString(R.string.columnsplit), getString(R.string.columnsplitReplace));
                     entryAdapter.addItem(dicEntry);
+                    data_line++;
                 }
                 entryAdapter.sort();
 
@@ -238,6 +270,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+            data_line = 0;
             entryAdapter.notifyDataSetChanged();
         }
     }

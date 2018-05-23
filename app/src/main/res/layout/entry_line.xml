@@ -12,7 +12,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:textColor="@color/colorPrimaryHeadline"
-        android:layout_alignEnd="@+id/line_body" />
+        android:layout_alignEnd="@+id/line_body"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/line_body" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,6 +24,8 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/line_title"
         android:layout_alignParentEnd="true"
-        android:textColor="@android:color/black" />
+        android:textColor="@color/text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" />
 
 </RelativeLayout>

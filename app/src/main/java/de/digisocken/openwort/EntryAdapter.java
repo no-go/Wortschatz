@@ -37,13 +37,18 @@ public class EntryAdapter extends BaseAdapter {
         clear();
         squery = query;
         query = query.toLowerCase();
-        for (int i = 0; i < entryAdapter.getCount(); i++) {
+        MainActivity.data_total = entryAdapter.getCount();
+        MainActivity.data_line = 0;
+
+        for (int i = 0; i < MainActivity.data_total; i++) {
             DicEntry dicEntry = (DicEntry) entryAdapter.getItem(i);
             if (dicEntry.title.toLowerCase().contains(query) || dicEntry.body.toLowerCase().contains(query)) {
                 addItem(dicEntry);
+                MainActivity.data_line++;
             }
         }
         sort();
+        MainActivity.data_line = 0;
     }
 
     @Override

@@ -23,6 +23,7 @@
 
     <TextView android:id="@android:id/empty"
         android:padding="10dp"
+        android:textColor="@color/text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="@string/empty" />
