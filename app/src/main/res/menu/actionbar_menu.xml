@@ -15,6 +15,12 @@
             android:title="@string/copypaste" />
     </group>
 
+    <group android:checkableBehavior="all">
+        <item
+            android:id="@+id/action_night"
+            android:title="@string/dark" />
+    </group>
+
     <item
         android:id="@+id/action_project"
         android:title="@string/projPage"></item>

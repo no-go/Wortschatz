@@ -4,6 +4,7 @@ OpenWort ist ein kleiner, einfach bedienbarer Thesaurus der deutschen Sprache mi
 
 👉 arbeitet offline (maximaler Datenschutz)
 👉 kein Dateizugriff (maximaler Datenschutz)
+👉 Nachtmodus
 👉 der Quellcode der App ist auch für Anfänger verständlich
 👉 In Suchergebnissen werden Funde hervorgehoben
 👉 ein Tippen auf einen Eintrag kopiert ihn komplett in die Zwischenablage

@@ -1,5 +1,6 @@
 package de.digisocken.openwort;
 
+import android.app.UiModeManager;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -15,6 +16,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
     private ClipboardManager clipboard;
     public static SharedPreferences mPreferences;
     private TextView emptyView;
+    private UiModeManager umm;
 
     public static int data_total = 1;
     public static int data_line = 0;
@@ -77,13 +80,25 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_copypaste:
+            case R.id.action_night:
                 if (item.isChecked()) {
-                    copyPasteWindow = false;
-                    mPreferences.edit().putBoolean("copypaste", false).apply();
+                    mPreferences.edit().putBoolean("nightmode", false).apply();
+                    umm.setNightMode(UiModeManager.MODE_NIGHT_NO);
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     item.setChecked(false);
                 } else {
                     copyPasteWindow = true;
+                    mPreferences.edit().putBoolean("nightmode", true).apply();
+                    umm.setNightMode(UiModeManager.MODE_NIGHT_YES);
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    item.setChecked(true);
+                }
+                break;
+            case R.id.action_copypaste:
+                if (item.isChecked()) {
+                    mPreferences.edit().putBoolean("copypaste", false).apply();
+                    item.setChecked(false);
+                } else {
                     mPreferences.edit().putBoolean("copypaste", true).apply();
                     item.setChecked(true);
                 }
@@ -108,9 +123,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        MenuItem mi2 = menu.findItem(R.id.action_copypaste);
+        MenuItem mi1 = menu.findItem(R.id.action_copypaste);
+        MenuItem mi2 = menu.findItem(R.id.action_night);
         copyPasteWindow = mPreferences.getBoolean("copypaste", true);
-        mi2.setChecked(copyPasteWindow);
+        boolean night = mPreferences.getBoolean("nightmode", false);
+        mi1.setChecked(copyPasteWindow);
+        mi2.setChecked(night);
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -188,6 +206,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        umm = (UiModeManager) getSystemService(Context.UI_MODE_SERVICE);
         mPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
         setContentView(R.layout.activity_main);
@@ -239,6 +258,20 @@ public class MainActivity extends AppCompatActivity {
         handler.postDelayed(updateHintThread, 500);
         resultEntryAdapter = new EntryAdapter(this);
         new RetrieveFeedTask().execute();
+    }
+
+    @Override
+    protected void onResume() {
+        boolean night = mPreferences.getBoolean("nightmode", false);
+        if (night) {
+            umm.setNightMode(UiModeManager.MODE_NIGHT_YES);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else {
+            umm.setNightMode(UiModeManager.MODE_NIGHT_NO);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+        }
+        super.onResume();
     }
 
     class RetrieveFeedTask extends AsyncTask<String, Void, Void> {

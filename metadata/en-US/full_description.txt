@@ -4,6 +4,7 @@ Features:
 
 ✔️ works offline (maximal privacy)
 ✔️ no file access (maximal privacy)
+✔️ night mode
 ✔️ very simple code for beginners
 ✔️ search and highlight results
 ✔️ click to copy an entry to clipboard
