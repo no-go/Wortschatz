@@ -87,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     item.setChecked(false);
                 } else {
-                    copyPasteWindow = true;
                     mPreferences.edit().putBoolean("nightmode", true).apply();
                     umm.setNightMode(UiModeManager.MODE_NIGHT_YES);
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -96,9 +95,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.action_copypaste:
                 if (item.isChecked()) {
+                    copyPasteWindow = false;
                     mPreferences.edit().putBoolean("copypaste", false).apply();
                     item.setChecked(false);
                 } else {
+                    copyPasteWindow = true;
                     mPreferences.edit().putBoolean("copypaste", true).apply();
                     item.setChecked(true);
                 }

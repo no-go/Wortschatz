@@ -3,10 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/action_search"
-        app:actionViewClass="android.support.v7.widget.SearchView"
+    <item
+        android:id="@+id/action_search"
+        android:icon="@mipmap/search"
         android:title="@string/search"
-        android:icon="@android:drawable/ic_menu_search"
+        app:actionViewClass="android.support.v7.widget.SearchView"
         app:showAsAction="always|collapseActionView" />
 
     <group android:checkableBehavior="all">
